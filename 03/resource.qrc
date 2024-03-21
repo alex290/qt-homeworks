@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>_icon/db.svg</file>
+    </qresource>
+</RCC>
