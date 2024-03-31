@@ -28,8 +28,6 @@ private slots:
 
     void on_qpB_round_clicked();
 
-    void AddRound(const long& sec, const size_t& round);
-
 private:
     Ui::MainWindow* ui;
     Stopwatch* timerWatch;

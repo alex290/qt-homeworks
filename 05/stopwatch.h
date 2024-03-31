@@ -13,11 +13,10 @@ public:
     void StartTimer();
     void StopTimer();
     void ClearSecond();
-    void NewRound();
+    void NewRound(long& sec_, size_t& round_);
 
 signals:
     void UpdateTime(const long& sec);
-    void AddRound(const long& sec, const size_t& round);
 
 private:
     QTimer* timer;

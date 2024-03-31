@@ -23,10 +23,11 @@ void Stopwatch::ClearSecond()
     round = 0;
 }
 
-void Stopwatch::NewRound()
+void Stopwatch::NewRound(long& sec_, size_t& round_)
 {
     round++;
-    emit AddRound((sec - last_sec), round);
+    sec_ = sec - last_sec;
+    round_ = round;
     last_sec = sec;
 }
 

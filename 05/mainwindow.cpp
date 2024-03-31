@@ -7,7 +7,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     timerWatch = new Stopwatch(this);
     ui->qpB_round->setEnabled(false);
     connect(timerWatch, &Stopwatch::UpdateTime, this, &MainWindow::UpdateTime);
-    connect(timerWatch, &Stopwatch::AddRound, this, &MainWindow::AddRound);
     ui->qpB_start->setStyleSheet("background-color: #c6f6b4");
     on_qpB_clear_clicked();
 }
@@ -50,11 +49,9 @@ void MainWindow::on_qpB_clear_clicked()
 
 void MainWindow::on_qpB_round_clicked()
 {
-    timerWatch->NewRound();
-}
-
-void MainWindow::AddRound(const long& sec, const size_t& round)
-{
+    long sec;
+    size_t round;
+    timerWatch->NewRound(sec, round);
     double sec_dec = static_cast<double>(sec) / 10;
     ui->qTBr_round->append(QString("Круг %1, время: %2 сек").arg(round).arg(sec_dec));
 }
