@@ -23,7 +23,6 @@ void MainWindow::on_qpB_start_toggled(bool checked)
     {
         ui->qpB_start->setText("Стоп");
         ui->qpB_round->setEnabled(true);
-        ui->qpB_clear->setEnabled(false);
         timerWatch->StartTimer();
         ui->qpB_start->setStyleSheet("background-color: #f6bfb3");
     }
@@ -31,7 +30,6 @@ void MainWindow::on_qpB_start_toggled(bool checked)
     {
         ui->qpB_start->setText("Старт");
         ui->qpB_round->setEnabled(false);
-        ui->qpB_clear->setEnabled(true);
         ui->qpB_start->setStyleSheet("background-color: #c6f6b4");
         timerWatch->StopTimer();
     }
