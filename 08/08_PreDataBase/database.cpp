@@ -47,6 +47,9 @@ void DataBase::LoadAllTable(QTableView* view)
     model->setTable("film");
 
     model->select();
+    model->setHeaderData(0, Qt::Horizontal, QString("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QString("Название фильма"));
+    model->setHeaderData(2, Qt::Horizontal, QString("Описание фильма"));
 
     //    qDebug() << model->lastError().text();
     view->setModel(model);
@@ -74,6 +77,9 @@ bool DataBase::LoadCategoryTable(QTableView* view, int id)
 
     QSqlQueryModel* model = new QSqlQueryModel();
     model->setQuery(request, *dataBase);
+
+    model->setHeaderData(0, Qt::Horizontal, QString("Название фильма"));
+    model->setHeaderData(1, Qt::Horizontal, QString("Описание фильма"));
     if (model->lastError().isValid())
     {
         res = true;
