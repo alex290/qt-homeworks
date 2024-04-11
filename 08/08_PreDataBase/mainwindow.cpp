@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow()
 {
+    on_pb_clear_clicked();
     delete ui;
 }
 
@@ -148,7 +149,7 @@ void MainWindow::ReceiveStatusConnectionToDB(bool status)
 
 void MainWindow::on_pb_clear_clicked()
 {
-    if (showsTable)
+    if (ui->tb_result->model() != nullptr)
     {
         ui->tb_result->model()->deleteLater();
         showsTable = false;

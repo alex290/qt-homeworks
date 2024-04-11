@@ -75,7 +75,7 @@ bool DataBase::LoadCategoryTable(QTableView* view, int id)
             "WHERE c.name = 'Horror'";
     }
 
-    QSqlQueryModel* model = new QSqlQueryModel();
+    QSqlQueryModel* model = new QSqlQueryModel(this);
     model->setQuery(request, *dataBase);
 
     model->setHeaderData(0, Qt::Horizontal, QString("Название фильма"));
