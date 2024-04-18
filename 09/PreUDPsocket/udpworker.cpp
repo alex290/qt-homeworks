@@ -51,9 +51,7 @@ void UDPworker::ReadMess(QNetworkDatagram datagram)
     int length = datagram.data().size();
 
     QString addr = datagram.senderAddress().toString();
-    //    QString text = QString("Принято сообщение от %1, размер сообщения(байт) %2").arg(addr).arg(length);
-    QString text = QString(datagram.data());
-
+    QString text = QString("Принято сообщение от %1, размер сообщения(байт) %2").arg(addr).arg(length);
     emit sig_sendToGUI(text);
 }
 /*!
